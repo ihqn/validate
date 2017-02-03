@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+		<title></title>
+		<meta name="keywords" content="" />
+		<meta name="description" content=""/>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="validate.js"></script>
+	</head>
+	<body>
+		<div class="js-validate" >
+			<input type="tel" vail="passwrd" errormsg="密码保证6-20位的英文字母/数字及其它字符，不能数字开头"  placeholder="输入密码" />
+			<input type="tel" vail="otempty|cellphone" errormsg="联系手机不能为空|联系手机不正确哦"  placeholder="请输入手机号码" />
+			<input type="tel" vail="color" errormsg="颜色值错误"  placeholder="输入颜色值" />
+		</div>
+		<button>验证</button>
+
+		<script type="text/javascript">
+			$("button").on("click", function () {
+				if( !validate($('.js-validate input'), function(a){ alert(a) }, false, {color:"^[a-fA-F0-9]{6}$"})() ) {
+                    return false;
+                }
+			})
+		</script>
+	</body>
+</html>
