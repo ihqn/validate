@@ -8,7 +8,7 @@
 ### 如何使用
 可以直接引入使用，也支持AMD模块
 
-配置：
+配置：   
 validate(eles，errFun，isround，newRen)()
 
 - **eles** jQuery对象，所要进行判断的元素
@@ -17,7 +17,7 @@ validate(eles，errFun，isround，newRen)()
 - **newRen** 扩展需要的正则或者函数，注意为匹配值为false则会进入验证失败环节
 
 
-正式使用
+正式使用  
 **html**
 ```
 <input type="tel" vail="otempty|cellphone" errormsg="联系手机不能为空|联系手机不正确哦"  placeholder="请输入手机号码" />
