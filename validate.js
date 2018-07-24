@@ -21,10 +21,13 @@
                 num: '^\\d*$',
                 decimal: '^\\d*(?:\\.\\d{1,2})?$',//小数
                 phone: '^(((1[1-9][0-9]{1})+\\d{8})|((0\\d{2,3}-?)?[1-9]\\d{6,7})$', //手机或者固话
-                chinese: '^[\\u4E00-\\u9FA5\\uF900-\\uFA2D][\\u4E00-\\u9FA5\\uF900-\\uFA2D1-9a-zA-Z]+$',
+                chinese: '^[\\u4E00-\\u9FA5\\uF900-\\uFA2D]+$',
                 otempty: function(value) {
-                    return value.length > 0;
-                }                       //非空
+                    return value.length > 0; //非空
+                },
+                otemptySelect: function(val){
+                    return val > 0 //select必选
+                }                   
             },
             showErr: errcall,
             cheakinput: function(input){
@@ -88,6 +91,8 @@ num 纯数字
 decimal小数
 chinese中文
 otempty 为空返回false
+otemptySelect 用于select原素，为空返回false
+
 
 
 使用方法
